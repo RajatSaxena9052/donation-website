@@ -210,7 +210,9 @@ label{
    }
    .banner_text p{
     font-size: 44px;
-    margin: 72px 0px;
+    margin-top: 72px;
+    margin-left: 20px;
+    margin-right:90px;
 }
 
 }
