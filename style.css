@@ -12,19 +12,23 @@
     display: flex;
     flex-flow: row wrap;
     align-items:stretch;
-    justify-content:space-around;
+    justify-content:flex-end;
 }
 
 .child{
     width:135px;
-    /*color: #354463;*/
+    color: #354463;
+    margin-right: 20px;
 }
 
 .child a{
     color: #354463;
 }
-#line{
-    color:red;
+.child hr{
+    width:100%;
+    text-align:left;
+    margin-left:0;
+    display: none;
 }
 .stop_climate{
     font-size: 44px;
@@ -32,10 +36,17 @@
     text-align: right;
     width: 181px;
     align-self:flex-end;
+    margin:0px;
 }
 
-@media only screen and (min-width:700px){
-  .child{
+@media only screen and (min-width:750px){
+    .parent{
+        align-items:stretch;
+    }
+    .child hr{
+        display:none;
+    }
+    .child{
     width: 200px;
   }
     #the_green_trees_Initiative{
@@ -49,16 +60,31 @@
     .stop_climate p{
         margin: 0px;
     }
+   
+    .child{
+        align-self: flex-start;
+        margin-right: 37px;
+    }
+
 }
 
 @media only screen and (min-width:1000px){
+    p.contactstatement{
+        margin-top: 0px;;
+    }
+    .child hr{
+        display:block;
+    }
     .head{
         margin-top: 0px;
     }
     .child a{
     text-decoration: none;
     }
-   
+    .child{
+        margin-right: 0px;
+    }
+
     .parent{
         justify-content: space-evenly;
     }
