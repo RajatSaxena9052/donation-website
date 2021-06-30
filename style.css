@@ -1,12 +1,227 @@
+@font-face {
+    font-family: flood-std;
+    src: url(fonts/FloodStd.otf);
+}
+
+#theGreen{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #354463;
+    text-align: center;
+    font-size: 18px;;
+}
+.banner_text p{
+    font-family:flood-std, sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.banner{
+    background-image:url(annie-spratt-427340-unsplash.png);
+    display:flex;
+    flex-direction: column;
+}
+.form{
+    background-color:#354463;
+    color:white;
+    width: auto;
+    margin: 22px;
+    padding:22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-row-gap:20px;
+    grid-column-gap:15px;
+}
+.full_row{
+    grid-column: span 2;
+}
+
+#state{
+    column-count: 2;
+}
+
+.short_field{
+    width: 35px;
+}
+.long_field{
+    width: 100%;
+    font-weight: bold;
+
+}
+.very_long_field{
+    width: 100%;
+    font-weight: bold;
+}
+.input_field::placeholder{
+    color: #FFFFFF;
+    font-size: 16px;
+    opacity: 20%;
+    font-weight: normal;
+}
+
+.helvet_bold{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.helvet_regular{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.input_field{
+    border: none;
+    border-bottom: 2px solid #C1F7D5;
+    background-color: #354463;
+    color: #00000029;
+    height:2em;
+}
+.select_field{
+    border: none;
+    border-bottom: 2px solid #C1F7D5;
+    background-color: #354463;
+    color:#C1F7D5;
+    width:36px;
+}
+label{
+    font-size: 11px;
+}
+
+#info,#payinfo{
+    font-size: 20px;
+    align-self: center;
+}
+#clickinfo{
+    font-size: 18px;
+}
+#process{
+    width:100%;
+    height: 50px;
+    border-radius: 45px;
+    background-color:#C1F7D5;
+    color:#354463;
+    border: 2px solid #C1F7D5;
+    font-size: 16px;
+    font-weight: bold;
+}
+#goback{
+    font-size: 14px;
+    color: #C1F7D5;
+}
+#payinfo p{
+    margin-bottom: 0px;
+}
+#info p{
+    margin-bottom: 0px;
+    margin-top: 0px;
+} 
+
+#selectpane{
+    margin:12px;
+    }
+
+@media only screen and (min-width:700px) {
+    #theGreen{
+        font-size: 22px;
+    }
+    .form{
+        margin:72px;
+        padding:52px;
+        grid-row-gap:30px;
+        grid-column-gap:65px;
+    }
+    .input_field{
+        height: 4em;
+    }
+    #info,#payinfo{
+        font-size: 28px;
+        align-self: center;
+    }
+    #clickinfo{
+        font-size: 28px;
+    }
+    label{
+        font-size: 14px;
+    }
+    .input_field::placeholder{
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #process{
+        width:100%;
+        height: 56px;
+        font-size: 22px;
+    }
+    #mediapross{
+        grid-column:2;
+    }
+    #goback{
+    font-size: 17px;
+
+    }
+    #mediago{
+        grid-row:10;
+        align-self: center;
+    }
+    .short_field{
+        width: 96px;
+    }
+    .select_field{
+        width: 96px;
+        font-size: 20px;
+    }
+    #selectpane{
+        margin-top:30px;
+        width: 96px;
+    }
+    #payinfo p{
+        margin-bottom: 0px;
+    }
+    #info p{
+        margin-bottom: 0px;
+    } 
+    .banner_text p{
+        font-size: 44px;
+        margin-left: 120px;
+        margin-right: 120px;
+        margin-bottom: 0px;
+    }
+       
+}
+
+
+@media only screen and (min-width:1025px){
+    #theGreen{
+        font-size: 28px;
+    }
+    .banner{
+        display:flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .banner_text{
+    width: 384px;
+    height: 362px;
+    }
+    .banner_text p {
+        font-size: 72px;
+        font-family:flood-std, sans-serif;
+    }
+   .form{
+        width: 650px;
+   }
+   .banner_text p{
+    font-size: 44px;
+    margin: 72px 0px;
+}
+
+}
+
+/* footer css*/
 #the_green_trees_Initiative{
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 18px;
 }
-@font-face {
-    font-family: flood-std;
-    src: url(fonts/FloodStd.otf);
-}
+
 
 .parent{
     display: flex;
@@ -21,7 +236,7 @@
     margin-right: 20px;
 }
 
-.child a{
+.child,a{
     color: #354463;
 }
 .child hr{
@@ -39,7 +254,7 @@
     margin:0px;
 }
 
-@media only screen and (min-width:750px){
+@media only screen and (min-width:700px){
     .parent{
         align-items:stretch;
     }
@@ -84,9 +299,12 @@
     .child{
         margin-right: 0px;
     }
-
     .parent{
-        justify-content: space-evenly;
+        justify-content:space-around;
     }
 
+}
+
+.footer{
+    margin-top: 50px;
 }
