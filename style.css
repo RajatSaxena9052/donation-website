@@ -1,0 +1,66 @@
+#the_green_trees_Initiative{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+@font-face {
+    font-family: flood-std;
+    src: url(fonts/FloodStd.otf);
+}
+
+.parent{
+    display: flex;
+    flex-flow: row wrap;
+    align-items:stretch;
+    justify-content:space-around;
+}
+
+.child{
+    width:135px;
+    /*color: #354463;*/
+}
+
+.child a{
+    color: #354463;
+}
+#line{
+    color:red;
+}
+.stop_climate{
+    font-size: 44px;
+    font-family:flood-std, sans-serif;
+    text-align: right;
+    width: 181px;
+    align-self:flex-end;
+}
+
+@media only screen and (min-width:700px){
+  .child{
+    width: 200px;
+  }
+    #the_green_trees_Initiative{
+        font-size: 24px;
+    }
+
+    .stop_climate{
+        text-align:left;
+        align-self: flex-end;
+    }
+    .stop_climate p{
+        margin: 0px;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    .head{
+        margin-top: 0px;
+    }
+    .child a{
+    text-decoration: none;
+    }
+   
+    .parent{
+        justify-content: space-evenly;
+    }
+
+}
