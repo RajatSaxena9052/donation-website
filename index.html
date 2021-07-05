@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo</title>
     <link rel="stylesheet" href="style.css">
+    <script src="validation.js"></script>
 </head>
 
 <body>
@@ -14,62 +15,70 @@
         <p>The Green<br>Trees Initiative</p>
     </div>
     <!-- form section-->
+    <div>
+        <p id="error"></p>
+    </div>
 
-    <div class="banner">
-        <div class="banner_text">
-            <p>Give HOPE to those Who need It most</p>
-        </div>
-
-        <div class="form">
-
-            <div id="info" class="helvet_bold full_row">
-                <p>Your information</p>
+    <form action="/index.html" onsubmit="return call()">
+        <div class="banner">
+            <div class="banner_text">
+                <p>Give HOPE to those Who need It most</p>
             </div>
 
-            <div id="fname">
-                <label for="fname" class="helvet_regular ">FIRST NAME</label>
-                <input class="input_field long_field" type="text" placeholder="First name" name="fname" required>
-            </div>
+            <div class="form">
 
-            <div id="lname">
-                <label for="lname" class="helvet_regular">LAST NAME</label>
-                <input class="input_field long_field" type="text" placeholder="Last name" name="lname" required>
-            </div>
+                <div id="info" class="helvet_bold full_row">
+                    <p>Your information</p>
+                </div>
 
-            <div id="street" class="helvet_regular full_row left-right-pad">
-                <label for="address">STREET ADDRESS</label>
-                <input class="input_field very_long_field" type="text" placeholder="Street address" name="address"
-                    required>
-            </div>
+                <div id="fname">
+                    <label for="fname" class="helvet_regular ">FIRST NAME</label>
+                    <input id="firstname" class="input_field long_field" type="text" placeholder="First name"
+                        name="fname">
+                </div>
 
-            <div id="city">
-                <label for="city" class="helvet_regular">CITY</label>
-                <input class="input_field long_field" type="text" placeholder="City name" name="city">
-            </div>
 
-            <div id="state">
-                <div>
-                    <label for="state" class="helvet_regular">STATE</label>
-                    <div id="selectpane">
-                        <select class="select_field" name="state">
-                            <option value="alahabad">ALAHABAD</option>
-                            <option value="bhopal">BHOPAL</option>
-                            <option value="agra">AGRA</option>
-                            <option value="lucknow">LUCKNOW</option>
-                        </select>
+                <div id="lname">
+                    <label for="lname" class="helvet_regular">LAST NAME</label>
+                    <input id="lastname" class="input_field long_field" type="text" placeholder="Last name"
+                        name="lname">
+                </div>
+
+
+                <div id="street" class="helvet_regular full_row left-right-pad">
+                    <label for="address">STREET ADDRESS</label>
+                    <input id="address" class="input_field very_long_field" type="text" placeholder="Street address"
+                        name="address">
+                </div>
+
+                <div id="city">
+                    <label for="city" class="helvet_regular">CITY</label>
+                    <input id="City" class="input_field long_field" type="text" placeholder="City name" name="city">
+                </div>
+
+                <div id="state">
+                    <div>
+                        <label for="state" class="helvet_regular">STATE</label>
+                        <div id="selectpane">
+                            <select class="select_field" name="state">
+                                <option value="alahabad">ALAHABAD</option>
+                                <option value="bhopal">BHOPAL</option>
+                                <option value="agra">AGRA</option>
+                                <option value="lucknow">LUCKNOW</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="zipcode" class="helvet_regular">ZIP CODE</label>
+                        <input id="zipcode" class="input_field short_field" type="text" name="zipcode"
+                            placeholder="Zip">
                     </div>
                 </div>
-
-                <div>
-                    <label for="zipcode" class="helvet_regular">ZIP CODE</label>
-                    <input class="input_field short_field" type="number" name="zipcode" placeholder="Zip">
-                </div>
-            </div>
-
+                
             <div id="email" class="helvet_regular full_row left-right-pad">
                 <label for="email">EMAIL ADDRESS</label>
-                <input class="input_field very_long_field" type="email" placeholder="Email address" name="email"
-                    required>
+                <input id="eMail" class="input_field very_long_field" type="text" placeholder="Email address" name="email">
             </div>
 
             <div id="payinfo" class="helvet_bold full_row">
@@ -78,22 +87,22 @@
 
             <div id="credit" class="helvet_regular full_row">
                 <label for="card">CREDIT CARD NUMBER</label>
-                <input class="input_field very_long_field" type="number" placeholder="Credit card number" name="card"
-                    required>
+                <input id="creditCard" class="input_field very_long_field" type="text" placeholder="Credit card number" name="card"
+                    >
             </div>
 
             <div id="expdate">
                 <label for="expiration" class="helvet_regular">EXPIRATION DATE</label>
                 <div>
-                    <input class="input_field short_field" type="number" placeholder="MM" name="expiration" required>
-                    <input class="input_field short_field" type="number" placeholder="YYYY" name="expiration" required>
+                    <input id="month" class="input_field short_field" type="number" placeholder="MM" name="expiration" >
+                    <input id="year" class="input_field short_field" type="number" placeholder="YYYY" name="expiration" >
                 </div>
             </div>
 
             <div id="code">
                 <label for="cvv" class="helvet_regular">SECURITY CODE</label>
                 <div>
-                    <input class="input_field short_field" type="number" placeholder="CVC" name="cvv">
+                    <input  id="cvvcode" class="input_field short_field" type="number" placeholder="CVC" name="cvv">
                 </div>
             </div>
 
@@ -101,55 +110,60 @@
                 <p>Click the button to confirm your donation of $10, recurring monthly.</p>
             </div>
 
-            <div id="mediapross" class="helvet_bold full_row">
-                <button id="process" type="submit">Process Payment</button>
+                <div id="mediapross" class="helvet_bold full_row">
+                    <button id="process" type="submit">Process Payment</button>
+                </div>
+
+                <div id="mediago">
+                    <a id="goback" class="helvet_regular" href="#">Go back</a>
+                </div>
+
             </div>
 
-            <div id="mediago">
-                <a id="goback" class="helvet_regular" href="#">Go back</a>
+
+
+        </div>
+
+        <!-- footer section-->
+        <div id="foter" class="footer parent">
+
+            <div id="the_green_trees_Initiative" class="child">
+                <p>The Green Trees <br> Initiative</p>
+            </div>
+
+            <div id="contact_us" class="child">
+                <p class="head">CONTACT US</p>
+                <hr id="line">
+                <p class="contactstatement">123 Anywhere St.<br>Cityname, NY 11206 <br>(123)456-7890<br>contact@npo.org
+                </p>
+            </div>
+
+            <div id="Follow" class="child">
+                <p class="head">FOLLOW US</p>
+                <hr id="line" style="width:100%;text-align:left;margin-left:0">
+
+                <a href="#">Facebook</a><br>
+                <a href="#">Twitter</a><br>
+                <a href="#">Instagram</a><br>
+                <a href="#">Medium</a>
+            </div>
+
+            <div id="Learn_More" class="child">
+                <p class="head">LEARN MORE</p>
+                <hr id="line" style="width:100%;text-align:left;margin-left:0">
+                <a href="#">The issue</a><br>
+                <a href="#">How we help</a><br>
+                <a href="#">Get involved</a><br>
+                <a href="#">Latest news</a>
+            </div>
+
+            <div class="stop_climate child">
+                <p>#STOP CLIMATE CHANGE</p>
             </div>
 
         </div>
+    </form>
 
-    </div>
-
-    <!-- footer section-->
-    <div id="foter" class="footer parent">
-
-        <div id="the_green_trees_Initiative" class="child">
-            <p>The Green Trees <br> Initiative</p>
-        </div>
-
-        <div id="contact_us" class="child">
-            <p class="head">CONTACT US</p>
-            <hr id="line">
-            <p class="contactstatement">123 Anywhere St.<br>Cityname, NY 11206 <br>(123)456-7890<br>contact@npo.org</p>
-        </div>
-
-        <div id="Follow" class="child">
-            <p class="head">FOLLOW US</p>
-            <hr id="line" style="width:100%;text-align:left;margin-left:0">
-
-            <a href="#">Facebook</a><br>
-            <a href="#">Twitter</a><br>
-            <a href="#">Instagram</a><br>
-            <a href="#">Medium</a>
-        </div>
-
-        <div id="Learn_More" class="child">
-            <p class="head">LEARN MORE</p>
-            <hr id="line" style="width:100%;text-align:left;margin-left:0">
-            <a href="#">The issue</a><br>
-            <a href="#">How we help</a><br>
-            <a href="#">Get involved</a><br>
-            <a href="#">Latest news</a>
-        </div>
-
-        <div class="stop_climate child">
-            <p>#STOP CLIMATE CHANGE</p>
-        </div>
-
-    </div>
 </body>
 
 </html>
