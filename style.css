@@ -3,13 +3,16 @@
     src: url(fonts/FloodStd.otf);
 }
 
-#error{
-    background-color: red;
+#firstname,#lastname,#address,#City,#zipcode,#eMail,#payinfo,#creditCard,#month,#year,#cvvcode{
+    color: #afc2b6;
+    font-size: 18px;
+} 
+
+#error1,#error2,#error3,#error4,#error5,#error6,#error7,#error8,#error9,#error10,#error11{
+    font-weight:bold;
+    color:red;
+    font-size: 16px;
 }
-
-
-
-
 
 #theGreen{
     font-family: Arial, Helvetica, sans-serif;
@@ -85,7 +88,7 @@
     border: none;
     border-bottom: 2px solid #C1F7D5;
     background-color: #354463;
-    color:#C1F7D5;
+    color:#afc2b6;
     width:36px;
 }
 label{
@@ -136,7 +139,7 @@ label{
         grid-column-gap:65px;
     }
     .input_field{
-        height: 4em;
+        height:3em;
     }
     #info,#payinfo{
         font-size: 28px;
@@ -272,8 +275,8 @@ label{
         display:none;
     }
     .child{
-    width: 200px;
-  }
+        width: 200px;
+    }
     #the_green_trees_Initiative{
         font-size: 24px;
     }
