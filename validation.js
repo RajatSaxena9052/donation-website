@@ -343,7 +343,7 @@ function call() {
     }
     else {
         cvvCode.style.borderBottom = "2px solid #C1F7D5";
-        document.getElementById("error10"), innerHTML = "";
+        document.getElementById("error10").innerHTML = "";
         // return true;
         cvvCode.focus();
         status = false;
